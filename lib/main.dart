@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'screens/ConnectionsScreen.dart';
 import 'screens/CleanAndAnalyticsScreen.dart';
 import 'package:flutter/services.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: ConnectionsScreen(),
+      home: CleanAndAnalyticsScreen(),
       routes: {
         ConnectionsScreen.routeName: (ctx) => ConnectionsScreen(),
         CleanAndAnalyticsScreen.routeName: (ctx) => CleanAndAnalyticsScreen(),

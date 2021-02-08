@@ -34,142 +34,146 @@ class _ConnectionsScreenState extends State<ConnectionsScreen> {
       appBar: Appbar,
       body: LayoutBuilder(
         builder: (ctx, constraints) {
-          return SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                Container(
-                  margin: EdgeInsets.all(15),
-                  height: constraints.maxHeight * 0.2,
-                  width: constraints.maxWidth * 1,
-                  decoration: BoxDecoration(
-                    color: Colors.blue[100],
-                    borderRadius: BorderRadius.circular(25),
-                  ),
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                        left: 20,
-                        top: 20,
-                        child: Container(
-                            height: constraints.maxHeight * 0.2,
-                            margin: EdgeInsets.only(top: 20),
-                            child: Text(
-                              'From Computer',
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            )),
-                      ),
-                      Positioned(
-                        left: 20,
-                        top: 40,
-                        child: Container(
-                            height: constraints.maxHeight * 0.2,
-                            margin: EdgeInsets.only(top: 20),
-                            child: Text(
-                              'Connect computer via address bar',
-                              style: TextStyle(fontSize: 12),
-                            )),
-                      ),
-                      Positioned(
-                          left: 220,
-                          child: Container(
-                              height: constraints.maxHeight * 0.1,
-                              margin: EdgeInsets.only(top: 30),
-                              child: Image.asset('assets/images/computer.png')))
-                    ],
-                  ),
-                ),
-                Container(
-                  height: constraints.maxHeight * 0.1,
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(top: 20, left: 20),
-                  child: Text(
-                    'Import from cloud storage',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                ),
-                Row(
+          return Container(
+              height: (MediaQuery.of(context).size.height -
+                      Appbar.preferredSize.height -
+                      MediaQuery.of(context).padding.top) *
+                  1,
+              child: SingleChildScrollView(
+                child: Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(left: 20),
-                      height: constraints.maxHeight * 0.09,
-                      width: constraints.maxWidth * 0.4,
-                      decoration: BoxDecoration(
+                        margin: EdgeInsets.all(15),
+                        height: constraints.maxHeight * 0.2,
+                        decoration: BoxDecoration(
                           color: Colors.blue[100],
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                              left: 30,
-                              top: 18,
-                              child: Container(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Container(
+                                height: constraints.maxHeight * 0.08,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    Container(
+                                      height: constraints.maxHeight * 0.04,
+                                      margin: EdgeInsets.only(left: 4),
+                                      child: Text(
+                                        'From Computer',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ),
+                                    Container(
+                                        height: constraints.maxHeight * 0.04,
+                                        margin: EdgeInsets.only(left: 4),
+                                        child: Text(
+                                          'Connect computer via address bar',
+                                          style: TextStyle(
+                                            fontSize: 13,
+                                          ),
+                                        ))
+                                  ],
+                                )),
+                            Container(
+                                margin: EdgeInsets.only(left: 40),
+                                alignment: Alignment.centerRight,
+                                height: constraints.maxHeight * 0.1,
+                                child:
+                                    Image.asset('assets/images/computer.png'))
+                          ],
+                        )),
+                    Container(
+                      height: constraints.maxHeight * 0.05,
+                      alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(top: 10, left: 20,bottom:10),
+                      child: Text(
+                        'Import from cloud storage',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: <Widget>[
+                        Container(
+                          // margin: EdgeInsets.only(left: 20),
+                          height: constraints.maxHeight * 0.09,
+                          width: constraints.maxWidth * 0.4,
+                          decoration: BoxDecoration(
+                              color: Colors.blue[100],
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Container(
+                                height: constraints.maxHeight * 0.04,
                                 child: Image.asset('assets/images/dropbox.png'),
-                              )),
-                          Positioned(
-                              left: 70,
-                              top: 20,
-                              child: Container(
+                              ),
+                              Container(
+                                height: constraints.maxHeight * 0.04,
                                 child: Text('Dropbox'),
-                              )),
-                        ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          // margin: EdgeInsets.only(left: 20),
+                          height: constraints.maxHeight * 0.09,
+                          width: constraints.maxWidth * 0.4,
+                          decoration: BoxDecoration(
+                              color: Colors.cyan[100],
+                              borderRadius: BorderRadius.circular(20)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Container(
+                                height: constraints.maxHeight * 0.04,
+                                child: Image.asset(
+                                    'assets/images/googledrive.png'),
+                              ),
+                              Container(
+                                height: constraints.maxHeight * 0.04,
+                                child: Text('Google Drive'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Container(
+                      height: constraints.maxHeight * 0.05,
+                      alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(top:20,left: 20),
+                      child: Text(
+                        'Add Connection',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 20),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 20),
-                      height: constraints.maxHeight * 0.09,
-                      width: constraints.maxWidth * 0.43,
-                      decoration: BoxDecoration(
-                          color: Colors.cyan[100],
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Stack(
-                        children: <Widget>[
-                          Positioned(
-                              left: 28,
-                              top: 17,
-                              child: Container(
-                                child: Image.asset(
-                                    'assets/images/googledrive.png'),
-                              )),
-                          Positioned(
-                              left: 70,
-                              top: 20,
-                              child: Container(
-                                child: Text('Google Drive'),
-                              )),
-                        ],
+                      height: constraints.maxHeight * 0.44,
+                      child: ListView.builder(
+                        itemBuilder: ((ctx, index) {
+                          return ListTile(
+                            leading:
+                                Image.asset(connectionLists[index]['image']),
+                            title: Text(connectionLists[index]['title']),
+                            trailing: Icon(
+                              Icons.arrow_right_rounded,
+                              size: 50,
+                              color: Colors.blue[100],
+                            ),
+                          );
+                        }),
+                        itemCount: connectionLists.length,
                       ),
-                    ),
+                    )
                   ],
                 ),
-                Container(
-                  height: constraints.maxHeight * 0.04,
-                  alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(top: 40, left: 20),
-                  child: Text(
-                    'Add Connection',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                  ),
-                ),
-                Container(
-                  height: constraints.maxHeight * 0.44,
-                  child: ListView.builder(
-                    itemBuilder: ((ctx, index) {
-                      return ListTile(
-                        leading: Image.asset(connectionLists[index]['image']),
-                        title: Text(connectionLists[index]['title']),
-                        trailing: Icon(
-                          Icons.arrow_right_rounded,
-                          size: 50,
-                          color: Colors.blue[100],
-                        ),
-                      );
-                    }),
-                    itemCount: connectionLists.length,
-                  ),
-                )
-              ],
-            ),
-          );
+              ));
         },
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -220,8 +224,8 @@ class _ConnectionsScreenState extends State<ConnectionsScreen> {
                       color: Colors.black,
                     ),
                     onPressed: () {
-                      Navigator.of(context)
-                          .pushReplacementNamed(CleanAndAnalyticsScreen.routeName);
+                      Navigator.of(context).pushReplacementNamed(
+                          CleanAndAnalyticsScreen.routeName);
                     })),
           ]),
     );
