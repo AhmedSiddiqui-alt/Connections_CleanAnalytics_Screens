@@ -13,7 +13,7 @@ class _CleanAndAnalyticsScreenState extends State<CleanAndAnalyticsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Colors.blue[900],
+      backgroundColor: Colors.blue[900],
       body: Container(
         // height: (MediaQuery.of(context).size.height -
         //         MediaQuery.of(context).padding.top) *
@@ -24,7 +24,6 @@ class _CleanAndAnalyticsScreenState extends State<CleanAndAnalyticsScreen> {
                           child: Column(
                 children: <Widget>[
                   Container(
-                      color: Colors.blue[900],
                       height: (MediaQuery.of(context).size.height -
                               MediaQuery.of(context).padding.top) *
                           0.3,
@@ -110,7 +109,7 @@ class _CleanAndAnalyticsScreenState extends State<CleanAndAnalyticsScreen> {
                     // margin: EdgeInsets.only(top: 5),
                     height: (MediaQuery.of(context).size.height -
                             MediaQuery.of(context).padding.top) *
-                        0.6,
+                        0.7,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
